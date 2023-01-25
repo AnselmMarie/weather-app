@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "concurrently \"npm run dev:webpack\" \"npm run dev:tailwind\"",
         "dev:webpack": "webpack serve",
-        "dev:tailwind": "npx tailwindcss -i ./src/styles/tailwind.css -o ./dist/assets/styles/tailwind.css --watch",
+        "dev:tailwind": "npx tailwindcss -i ./src/styles/tailwind.css -o ./public/assets/styles/tailwind.css --watch",
         "build": "webpack --config webpack.config.js",
         "lint:wip": "concurrently \"npm run eslint\" \"npm run stylelint\"",
         "eslint": "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",

@@ -19,6 +19,12 @@ This project will allow the user to see a 7-day forecast based on endpoints from
 npm run dev
 ```
 
+## Testing
+
+```bash
+npm run test
+```
+
 ## Other
 
 The project uses a feature-based folder structure which allows scalability in the code. I added patterns and standards to the code to make it more maintainable and easier to read.
