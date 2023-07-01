@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import { IForecastPeriods } from '../../services/weather-address';
-import useDailyForecastLogic from './use-daily-forecast-logic';
+import useDailyForecastLogic from './use-daily-forecast.logic';
 
 /**
  * The daily forecast feature displays the additional information for the selected forecast

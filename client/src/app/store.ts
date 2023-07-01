@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import forecastSlice from '../features/forecast/forecast-slice';
+import forecastSlice from '../features/forecast/forecast.slice';
 import { weatherAddressApiSlice } from '../services/weather-address';
 
 /**

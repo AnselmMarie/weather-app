@@ -1,3 +1,3 @@
-import UiAddressModel from './address-model-view';
+import UiAddressModel from './address-model.view';
 
 export { UiAddressModel };

@@ -1,3 +1,3 @@
-import UiCard from './card-view';
+import UiCard from './card.view';
 
 export { UiCard };

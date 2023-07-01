@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import useAddressFormLogic from './use-address-form-logic';
+import useAddressFormLogic from './use-address-form.logic';
 import { UiAddressBar } from './address-bar';
 import { UiAddressModel } from './address-model';
 import './address-form.css';

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 import { ENV } from '../../configs/global';
-import { formatData } from './weather-address-helper';
+import { formatData } from './weather-address.helper';
 import { IAddress, IForecastFormatted } from '.';
 
 interface WeatherAddress {

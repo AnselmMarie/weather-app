@@ -1,4 +1,4 @@
-import UiInput from './input-view';
+import UiInput from './input.view';
 
 export { UiInput };
 

@@ -1,3 +1,3 @@
-import UiAddressBar from './address-bar-view';
+import UiAddressBar from './address-bar.view';
 
 export { UiAddressBar };

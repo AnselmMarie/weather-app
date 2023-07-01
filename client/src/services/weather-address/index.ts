@@ -1,4 +1,4 @@
-import weatherAddressApiSlice from './weather-address-api-slice';
+import weatherAddressApiSlice from './weather-address-api.slice';
 
 export { weatherAddressApiSlice };
 

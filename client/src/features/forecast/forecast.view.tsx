@@ -1,23 +1,50 @@
 import React, { ReactElement } from 'react';
+import { MenuItem, Select } from '@mui/material';
 
 import { UiCard } from '../../components/card';
 import { IForecastPeriods } from '../../services/weather-address';
-import useWeatherForecastLogic from './use-forecast-logic';
+import useWeatherForecastLogic from './use-forecast.logic';
 
 /**
  * The forecast feature displays the 7-day forecast
  */
 const Forecast = (): ReactElement => {
-    const { data, weatherData, activeDay, onChangeActiveDay } =
-        useWeatherForecastLogic();
+    const {
+        data,
+        weatherData,
+        currentForecastList,
+        activeDay,
+        onChangeActiveDay,
+        onChangeForecastAmount,
+    } = useWeatherForecastLogic();
 
     return (
         <>
+            <div className="text-center">
+                {!data && !activeDay ? (
+                    'To see a 7-day forecast of an area, click on the "Add Address" button, then submit an address..'
+                ) : (
+                    <div className="text-center">
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            label="Select Forecast"
+                            defaultValue="7"
+                            onChange={onChangeForecastAmount}
+                        >
+                            <MenuItem value={1}>1</MenuItem>
+                            <MenuItem value={2}>2</MenuItem>
+                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value={4}>4</MenuItem>
+                            <MenuItem value={5}>5</MenuItem>
+                            <MenuItem value={6}>6</MenuItem>
+                            <MenuItem value={7}>7</MenuItem>
+                        </Select>
+                    </div>
+                )}
+            </div>
             <div className="tw--flex-container tw--flex-center space-x-4 mx-auto min-w-1024">
-                {!data && !activeDay
-                    ? 'To see a 7-day forecast of an area, click on the "Add Address" button, then submit an address..'
-                    : null}
-                {weatherData?.map(
+                {currentForecastList?.map(
                     (el: IForecastPeriods, i: number): ReactElement => {
                         const isActive =
                             !!(i === 0 && activeDay === 'today') ||

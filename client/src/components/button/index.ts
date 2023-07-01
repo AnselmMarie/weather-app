@@ -1,4 +1,4 @@
-import UiButton from './button-view';
+import UiButton from './button.view';
 
 export { UiButton };
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Button from './button-view';
+import Button from './button.view';
 
 const handleClick = jest.fn();
 

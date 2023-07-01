@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Joi from 'joi';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux.hooks';
-import { fetchForecastByAddress } from '../../services/weather-address/weather-address-api-slice';
+import { fetchForecastByAddress } from '../../services/weather-address/weather-address-api.slice';
 import { IAddress } from '../../services/weather-address';
 
 import { IUiAddress } from '.';

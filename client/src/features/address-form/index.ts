@@ -1,6 +1,6 @@
 import { IAddress } from '../../services/weather-address';
 
-import UiAddressForm from './address-form-view';
+import UiAddressForm from './address-form.view';
 
 export { UiAddressForm };
 
