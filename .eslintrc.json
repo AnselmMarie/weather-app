@@ -1,0 +1,114 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "semi": 2,
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "no-prototype-builtins": "off",
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/dot-notation": "off",
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index",
+              "unknown",
+              "object"
+            ],
+            "pathGroups": [
+              {
+                "pattern": "react",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@/**",
+                "group": "internal",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["react"],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "types": ["array", "boolean", "number", "string"],
+            "format": ["camelCase", "UPPER_CASE"]
+          }
+          //   {
+          //     "selector": "default",
+          //     "format": ["camelCase"],
+          //     "leadingUnderscore": "allow",
+          //     "trailingUnderscore": "allow"
+          //   },
+          // {
+          //   "selector": "variable",
+          //   "types": ["boolean"],
+          //   "format": ["camelCase", "UPPER_CASE"],
+          //   "prefix": ["is", "has", "does"]
+          // },
+          // {
+          //   "selector": "function",
+          //   "types": ["function"],
+          //   "format": ["camelCase"]
+          // }
+        ]
+        // "@typescript-eslint/strict-boolean-expressions": [
+        //   2,
+        //   {
+        //     "allowString": false,
+        //     "allowNumber": false
+        //   }
+        // ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    }
+  ]
+}

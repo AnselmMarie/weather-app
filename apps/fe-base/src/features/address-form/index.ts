@@ -5,14 +5,14 @@ import UiAddressForm from './address-form.view';
 export { UiAddressForm };
 
 export interface IUiAddress {
-    serverError: any;
-    validationErrors: any;
-    isLoading: boolean;
-    address: IAddress | null;
-    open: boolean;
-    onRegister: any;
-    onSubmit: any;
-    onHandleSubmit: any;
-    onHandleClose: () => void;
-    onOpenModal: () => void;
+  serverError: any;
+  formErrors: any;
+  isLoading: boolean;
+  address: IAddress | null;
+  open: boolean;
+  onControl?: any;
+  onSubmit: any;
+  onHandleSubmit: any;
+  onHandleClose: () => void;
+  onOpenModal: () => void;
 }

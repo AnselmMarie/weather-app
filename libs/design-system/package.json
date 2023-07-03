@@ -1,0 +1,16 @@
+{
+  "name": "@weather-app/design-system",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/ui.mjs",
+      "require": "./src/ui.js"
+    },
+    "./hooks": {
+      "import": "./src/hooks.mjs",
+      "require": "./src/hooks.js"
+    }
+  }
+}

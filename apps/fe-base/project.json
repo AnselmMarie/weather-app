@@ -16,10 +16,11 @@
         "main": "apps/fe-base/src/app/app.tsx",
         "tsConfig": "apps/fe-base/tsconfig.app.json",
         "assets": ["apps/fe-base/src/favicon.ico", "apps/fe-base/src/assets"],
-        "styles": ["apps/fe-base/src/styles.css"],
+        "styles": ["apps/fe-base/src/styles/global.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/fe-base/webpack.config.js"
+        "webpackConfig": "apps/fe-base/webpack.config.js",
+        "postcssConfig": "apps/fe-base/postcss.config.js"
       },
       "configurations": {
         "development": {

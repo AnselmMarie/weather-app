@@ -9,34 +9,34 @@ import './address-form.css';
  * The address form feature allows the user to add/edit an address so it can get the 7-day forecast
  */
 const AddressForm = (): ReactElement => {
-    const {
-        serverError,
-        validationErrors,
-        isLoading,
-        address,
-        open,
-        onRegister,
-        onHandleSubmit,
-        onSubmit,
-        onOpenModal,
-        onHandleClose,
-    } = useAddressFormLogic();
+  const {
+    serverError,
+    formErrors,
+    isLoading,
+    address,
+    open,
+    onHandleSubmit,
+    onSubmit,
+    onControl,
+    onOpenModal,
+    onHandleClose,
+  } = useAddressFormLogic();
 
-    return (
-        <>
-            <UiAddressBar address={address} onEditData={onOpenModal} />
-            <UiAddressModel
-                serverError={serverError}
-                validationErrors={validationErrors}
-                isLoading={isLoading}
-                open={open}
-                onRegister={onRegister}
-                onHandleSubmit={onHandleSubmit}
-                onHandleClose={onHandleClose}
-                onSubmit={onSubmit}
-            />
-        </>
-    );
+  return (
+    <>
+      <UiAddressBar address={address} onEditData={onOpenModal} />
+      <UiAddressModel
+        serverError={serverError}
+        formErrors={formErrors}
+        isLoading={isLoading}
+        open={open}
+        onControl={onControl}
+        onHandleSubmit={onHandleSubmit}
+        onHandleClose={onHandleClose}
+        onSubmit={onSubmit}
+      />
+    </>
+  );
 };
 
 export default AddressForm;
