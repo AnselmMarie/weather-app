@@ -1,14 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 
-import NxWelcome from './nx-welcome';
+import { Home } from '../pages/home';
+import { store } from './store';
 
-export function App() {
-  return (
-    <div>
-      <NxWelcome title="weather-app" />
-    </div>
-  );
-}
-
-export default App;
+const root = createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+  <Provider store={store}>
+    <StrictMode>
+      <Home />
+    </StrictMode>
+  </Provider>
+);

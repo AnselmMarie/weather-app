@@ -13,7 +13,7 @@
         "outputPath": "dist/apps/fe-base",
         "index": "apps/fe-base/src/index.html",
         "baseHref": "/",
-        "main": "apps/fe-base/src/main.tsx",
+        "main": "apps/fe-base/src/app/app.tsx",
         "tsConfig": "apps/fe-base/tsconfig.app.json",
         "assets": ["apps/fe-base/src/favicon.ico", "apps/fe-base/src/assets"],
         "styles": ["apps/fe-base/src/styles.css"],
