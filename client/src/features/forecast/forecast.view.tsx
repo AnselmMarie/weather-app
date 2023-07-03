@@ -5,13 +5,9 @@ import { UiCard } from '../../components/card';
 import { IForecastPeriods } from '../../services/weather-address';
 import useWeatherForecastLogic from './use-forecast.logic';
 
-/**
- * The forecast feature displays the 7-day forecast
- */
 const Forecast = (): ReactElement => {
     const {
         data,
-        weatherData,
         currentForecastList,
         activeDay,
         onChangeActiveDay,
@@ -48,7 +44,7 @@ const Forecast = (): ReactElement => {
                     (el: IForecastPeriods, i: number): ReactElement => {
                         const isActive =
                             !!(i === 0 && activeDay === 'today') ||
-                            activeDay === el.name.toLowerCase();
+                            activeDay === el?.name?.toLowerCase();
 
                         return (
                             <React.Fragment key={i}>

@@ -3,8 +3,12 @@ import { SelectChangeEvent } from '@mui/material';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux.hooks';
 
-import { IForecastPeriods } from '../../services/weather-address';
+import {
+    IForecastPeriods,
+    selectWeatherById,
+} from '../../services/weather-address';
 import { activeForecast } from '.';
+import { useSelector } from 'react-redux';
 
 const useWeatherForecastLogic = () => {
     const dispatch = useAppDispatch();
@@ -13,7 +17,9 @@ const useWeatherForecastLogic = () => {
         IForecastPeriods[]
     >([]);
     const activeDay = useAppSelector((state) => state.forecast.active);
-    const { data } = useAppSelector((state) => state.weatherAddressApi);
+    const data: any = useSelector((state) =>
+        selectWeatherById(state, '01e955b0-3dc6-4deb-8d83-a6c5799ba68b')
+    );
 
     const changeActiveDay = (day: string): void => {
         dispatch(activeForecast(day.toLowerCase()));
@@ -32,11 +38,13 @@ const useWeatherForecastLogic = () => {
     useEffect(() => {
         if (!data) return;
 
+        const forecastData = data?.forecasts;
+
         const results = [];
-        let keys = Object.keys(data);
+        let keys = Object.keys(forecastData);
 
         for (const day of keys) {
-            const { [day]: arr } = data;
+            const { [day]: arr } = forecastData;
             if (arr[0]) results.push(arr[0]);
         }
 
@@ -47,7 +55,6 @@ const useWeatherForecastLogic = () => {
 
     return {
         data,
-        weatherData,
         currentForecastList,
         activeDay,
         onChangeActiveDay: changeActiveDay,

@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import forecastSlice from '../features/forecast/forecast.slice';
-import { weatherAddressApiSlice } from '../services/weather-address';
+import { apiSlice, serviceReducers } from '../services';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
+
+const preloadedState = {};
 
 /**
  * Configures the redux toolkit store
@@ -9,9 +12,15 @@ import { weatherAddressApiSlice } from '../services/weather-address';
 export const store = configureStore({
     reducer: {
         forecast: forecastSlice.reducer,
-        weatherAddressApi: weatherAddressApiSlice.reducer,
+        ...serviceReducers,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(apiSlice.middleware),
+    preloadedState,
+    devTools: process.env.NODE_ENV !== 'production',
 });
+
+setupListeners(store.dispatch);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Joi from 'joi';
 
-import { useAppDispatch, useAppSelector } from '../../hooks/redux.hooks';
-import { fetchForecastByAddress } from '../../services/weather-address/weather-address-api.slice';
-import { IAddress } from '../../services/weather-address';
+// import { useAppDispatch, useAppSelector } from '../../hooks/redux.hooks';
+// import { fetchForecastByAddress } from '../../services/weather-address/weather-address-api.slice';
+import { IAddress, useLazyGetWeatherQuery } from '../../services';
 
 import { IUiAddress } from '.';
 import './address-form.css';
@@ -17,11 +17,9 @@ const schema = Joi.object({
 });
 
 const useAddressFormLogic = (): IUiAddress => {
-    const dispatch = useAppDispatch();
     const { register, handleSubmit, reset } = useForm();
-    const { data, isLoading, isSuccess, error } = useAppSelector(
-        (state) => state.weatherAddressApi
-    );
+    const [getWeather, result] = useLazyGetWeatherQuery();
+    const { data, error, isError, isSuccess, isLoading, isFetching } = result;
 
     const [address, setAddress] = useState<IAddress | null>(null);
     const [payloadObj, setPayloadObj] = useState<IAddress | null>(null);
@@ -41,11 +39,11 @@ const useAddressFormLogic = (): IUiAddress => {
         fetchForecast(payload);
     };
 
-    const openModal = () => {
+    const openModal = (): void => {
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose = (): void => {
         if (payloadObj !== null) {
             reset(payloadObj);
         } else {
@@ -58,32 +56,33 @@ const useAddressFormLogic = (): IUiAddress => {
     };
 
     const fetchForecast = async (payload: IAddress) => {
+        setPayloadObj(payload);
+
         try {
-            setPayloadObj(payload);
-            await dispatch(fetchForecastByAddress(payload)).unwrap();
+            await getWeather(payload).unwrap();
         } catch (err) {
             console.error('error', `Fetch failed:`);
         }
     };
 
     useEffect(() => {
-        if (error) {
+        if (isError) {
             setServerError(error);
         }
-    }, [JSON.stringify(error)]);
-
-    useEffect(() => {
-        if (isSuccess) {
-            setAddress(payloadObj);
-            handleClose();
-        }
-    }, [isSuccess]);
+    }, [isError]);
 
     useEffect(() => {
         if (!data) {
             openModal();
         }
+
+        if (isSuccess && !isError) {
+            setAddress(payloadObj);
+            handleClose();
+        }
     }, [data]);
+
+    console.log('data', data);
 
     return {
         validationErrors,

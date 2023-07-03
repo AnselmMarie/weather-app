@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import { IForecastPeriods } from '../../services/weather-address';
 import useDailyForecastLogic from './use-daily-forecast.logic';

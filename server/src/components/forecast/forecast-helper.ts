@@ -1,12 +1,7 @@
-import { IForecastFormatted, IForecastPeriods } from '.';
-import DAYS from './days-constants';
+import { DAYS } from './forecast-constant';
+import { IForecastFormatted, IForecastPeriods } from './forecast-interface';
 
-/**
- * This function takes the forecast response and formats it so the application can use it.
- * @param {IForecastPeriods[]} data - The forecast response
- * @return {IForecastFormatted} The formatted response
- */
-export const formatData = (data: IForecastPeriods[]): IForecastFormatted => {
+export const formatData = (data: IForecastPeriods[]): any[] => {
     let currentDay = 'today';
     const results: IForecastFormatted = {
         [currentDay]: [],
@@ -40,5 +35,10 @@ export const formatData = (data: IForecastPeriods[]): IForecastFormatted => {
         }
     }
 
-    return results;
+    return [
+        {
+            id: '01e955b0-3dc6-4deb-8d83-a6c5799ba68b',
+            forecasts: results,
+        },
+    ];
 };

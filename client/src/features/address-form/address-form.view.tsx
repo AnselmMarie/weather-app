@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import useAddressFormLogic from './use-address-form.logic';
 import { UiAddressBar } from './address-bar';
@@ -24,21 +24,17 @@ const AddressForm = (): ReactElement => {
 
     return (
         <>
-            <div>
-                <div>
-                    <UiAddressBar address={address} onEditData={onOpenModal} />
-                    <UiAddressModel
-                        serverError={serverError}
-                        validationErrors={validationErrors}
-                        isLoading={isLoading}
-                        open={open}
-                        onRegister={onRegister}
-                        onHandleSubmit={onHandleSubmit}
-                        onHandleClose={onHandleClose}
-                        onSubmit={onSubmit}
-                    />
-                </div>
-            </div>
+            <UiAddressBar address={address} onEditData={onOpenModal} />
+            <UiAddressModel
+                serverError={serverError}
+                validationErrors={validationErrors}
+                isLoading={isLoading}
+                open={open}
+                onRegister={onRegister}
+                onHandleSubmit={onHandleSubmit}
+                onHandleClose={onHandleClose}
+                onSubmit={onSubmit}
+            />
         </>
     );
 };
