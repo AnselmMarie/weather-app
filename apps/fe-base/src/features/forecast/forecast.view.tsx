@@ -35,8 +35,6 @@ const Forecast = (): ReactElement => {
         ) : (
           <div className="text-center">
             <UiSelect
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
               label="Select Forecast"
               defaultValue="7"
               menuItems={menuItemsObj}

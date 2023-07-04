@@ -1,3 +1,3 @@
-export enum AlertSeverityEnum {
+export enum UiAlertSeverity {
   ERROR = 'error',
 }

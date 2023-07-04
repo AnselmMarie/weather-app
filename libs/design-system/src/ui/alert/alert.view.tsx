@@ -2,21 +2,21 @@ import { PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import Alert from '@mui/material/Alert';
 
-import { AlertSeverityEnum } from './alert.enum';
+import { UiAlertSeverity } from './alert.enum';
 
 interface UiAlertProps {
-  severity?: AlertSeverityEnum;
-  className?: string;
+  severity?: UiAlertSeverity;
+  alertClasses?: string;
   children: ReactNode;
 }
 
 const AlertView = ({
-  severity = AlertSeverityEnum.ERROR,
-  className = '',
+  severity = UiAlertSeverity.ERROR,
+  alertClasses = '',
   children,
 }: PropsWithChildren<UiAlertProps>): ReactElement => {
   return (
-    <Alert severity={severity} className={className}>
+    <Alert severity={severity} className={alertClasses}>
       {children}
     </Alert>
   );

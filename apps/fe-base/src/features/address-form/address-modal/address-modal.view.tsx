@@ -24,11 +24,7 @@ const AddressModel = (): ReactElement => {
   } = useAddressModalLogic();
 
   return (
-    <UiModal
-      openModal={isModalOpen}
-      ariaLabelledby="modal-modal-title"
-      ariaDescribedby="modal-modal-description"
-    >
+    <UiModal openModal={isModalOpen}>
       <div className="address-modal--container w-3/4 mx-auto">
         <div className="relative p-5">
           <UiBackDrop openBackdrop={isLoading} />
@@ -39,7 +35,7 @@ const AddressModel = (): ReactElement => {
           </div>
 
           {serverError ? (
-            <UiAlert className="mt-3">
+            <UiAlert alertClasses="mt-3">
               <p>Server Error</p>
               {serverError?.message ? `- ${serverError?.message}` : ''}
               <br />- Make sure the address was added correctly.
