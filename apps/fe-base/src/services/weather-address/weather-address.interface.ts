@@ -1,21 +1,21 @@
 export interface IForecastPeriods {
-    number: number;
-    name: string;
-    startTime: string;
-    endTime: string;
-    isDaytime: boolean;
-    temperature: number;
-    temperatureUnit: string;
-    temperatureTrend: string | null;
-    windSpeed: string;
-    windDirection: string;
-    icon: string;
-    shortForecast: string;
-    detailedForecast: string;
+  number: number;
+  name: string;
+  startTime: string;
+  endTime: string;
+  isDaytime: boolean;
+  temperature: number;
+  temperatureUnit: string;
+  temperatureTrend: string | null;
+  windSpeed: string;
+  windDirection: string;
+  icon: string;
+  shortForecast: string;
+  detailedForecast: string;
 }
 
 export interface IForecastFormatted {
-    [key: string]: IForecastPeriods[];
+  [key: string]: IForecastPeriods[];
 }
 
 // export interface IForecastDataFormatted {
@@ -23,12 +23,12 @@ export interface IForecastFormatted {
 // }
 
 export interface IForecastResponse {
-    forecastData: IForecastFormatted;
+  forecastData: IForecastFormatted;
 }
 
 export interface IAddress {
-    streetAddress: string;
-    city: string;
-    state: string;
-    zipCode: string;
+  streetAddress: string;
+  city: string;
+  state: string;
+  zipCode: string;
 }

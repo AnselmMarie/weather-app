@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer components {
-    .tw--flex-container {
-        @apply flex flex-row flex-wrap;
-    }
-    .tw--flex-center {
-        @apply justify-center items-center;
-    }
+  .tw--flex-container {
+    @apply flex flex-row flex-wrap;
+  }
+  .tw--flex-center {
+    @apply justify-center items-center;
+  }
 }

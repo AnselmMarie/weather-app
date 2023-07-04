@@ -20,15 +20,13 @@ const BackdropView = ({
   onChange,
 }: UiSelectProps): ReactElement => {
   return (
-    <Select
-      labelId={labelId}
-      id={id}
-      label={label}
-      defaultValue={defaultValue}
-      onChange={onChange}
-    >
-      {menuItems.map((el: any): ReactElement => {
-        return <MenuItem value={el.value}>{el.label}</MenuItem>;
+    <Select labelId={labelId} id={id} label={label} defaultValue={defaultValue} onChange={onChange}>
+      {menuItems.map((el: any, i: any): ReactElement => {
+        return (
+          <MenuItem key={i} value={el.value}>
+            {el.label}
+          </MenuItem>
+        );
       })}
     </Select>
   );

@@ -1,8 +1,9 @@
 import { ReactElement } from 'react';
+
 import { TextField } from '@mui/material';
+import { Controller } from 'react-hook-form';
 
 import { UiInputType } from '.';
-import { Controller } from 'react-hook-form';
 
 interface IUiInput {
   type?: string;
@@ -17,7 +18,6 @@ interface IUiInput {
 
 const Input = ({
   name = '',
-  error = '',
   type = UiInputType.TEXT,
   label,
   min,
@@ -28,13 +28,13 @@ const Input = ({
     <Controller
       control={onControl}
       name={name}
-      render={({ field: { onChange, onBlur } }) => (
+      render={({ field: { onChange, onBlur, value }, fieldState: { error } }) => (
         <TextField
           className="w-full"
           variant="outlined"
           label={label}
           error={!!error}
-          helperText={error}
+          helperText={error ? error.message : ''}
           InputProps={{
             inputProps: {
               min: min,
@@ -43,6 +43,7 @@ const Input = ({
               maxLength: max,
             },
           }}
+          defaultValue={value}
           type={type}
           onBlur={onBlur}
           onChange={onChange}

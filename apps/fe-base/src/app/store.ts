@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 import forecastSlice from '../features/forecast/forecast.slice';
 import { apiSlice, serviceReducers } from '../services';
-import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 const preloadedState = {};
 
@@ -10,14 +10,13 @@ const preloadedState = {};
  * Configures the redux toolkit store
  */
 export const store = configureStore({
-    reducer: {
-        forecast: forecastSlice.reducer,
-        ...serviceReducers,
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(apiSlice.middleware),
-    preloadedState,
-    devTools: process.env.NODE_ENV !== 'production',
+  reducer: {
+    forecast: forecastSlice.reducer,
+    ...serviceReducers,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+  preloadedState,
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 setupListeners(store.dispatch);
