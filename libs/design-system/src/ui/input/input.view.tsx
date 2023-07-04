@@ -10,9 +10,11 @@ interface IUiInput {
   name?: string;
   min?: number;
   max?: number;
-  error?: string;
+  errorMessage?: string;
+  defaultValue?: string;
   label: string;
-  onValidate?: any;
+  onChange?: any;
+  onBlur?: any;
   onControl?: any;
 }
 
@@ -22,35 +24,60 @@ const Input = ({
   label,
   min,
   max,
+  errorMessage = '',
+  defaultValue = '',
+  onBlur = null,
   onControl = null,
+  onChange = null,
 }: IUiInput): ReactElement => {
-  return (
-    <Controller
-      control={onControl}
-      name={name}
-      render={({ field: { onChange, onBlur, value }, fieldState: { error } }) => (
-        <TextField
-          className="w-full"
-          variant="outlined"
-          label={label}
-          error={!!error}
-          helperText={error ? error.message : ''}
-          InputProps={{
-            inputProps: {
-              min: min,
-              max: max,
-              minLength: min,
-              maxLength: max,
-            },
-          }}
-          defaultValue={value}
-          type={type}
-          onBlur={onBlur}
-          onChange={onChange}
-        />
-      )}
-    />
-  );
+  const InputField = ({
+    onControlChange = null,
+    onControlBlur = null,
+    controlValue = null,
+  }: any): ReactElement => {
+    return (
+      <TextField
+        className="w-full"
+        variant="outlined"
+        label={label}
+        error={!!errorMessage}
+        helperText={errorMessage ? errorMessage : ''}
+        InputProps={{
+          inputProps: {
+            min: min,
+            max: max,
+            minLength: min,
+            maxLength: max,
+          },
+        }}
+        defaultValue={controlValue || defaultValue}
+        type={type}
+        onBlur={onControlBlur || onBlur}
+        onChange={onControlChange || onChange}
+      />
+    );
+  };
+
+  if (onControl) {
+    return (
+      <Controller
+        control={onControl}
+        name={name}
+        render={({
+          field: { onChange: onControlChange, onBlur: onControlBlur, value: controlValue },
+          fieldState: { error },
+        }) => (
+          <InputField
+            onControlChange={onControlChange}
+            onControlBlur={onControlBlur}
+            controlValue={controlValue}
+          />
+        )}
+      />
+    );
+  }
+
+  return <InputField />;
 };
 
 export default Input;

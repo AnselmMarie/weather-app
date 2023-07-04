@@ -15,7 +15,7 @@ const Forecast = (): ReactElement => {
     const isActive = !!(i === 0 && activeDay === 'today') || activeDay === el?.name?.toLowerCase();
     return (
       <UiCard
-        classes="w-28 h-48 cursor-pointer text-center"
+        cardClasses="w-28 h-48 cursor-pointer text-center"
         raised={isActive}
         onClick={() => onChangeActiveDay(i === 0 ? 'today' : el.name)}
       >

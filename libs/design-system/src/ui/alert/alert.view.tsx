@@ -1,6 +1,7 @@
 import { PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import Alert from '@mui/material/Alert';
+
 import { AlertSeverityEnum } from './alert.enum';
 
 interface UiAlertProps {

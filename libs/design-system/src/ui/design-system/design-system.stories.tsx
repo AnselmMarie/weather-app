@@ -1,9 +1,10 @@
 import type { Meta } from '@storybook/react';
+
 import { DesignSystem } from './design-system';
 
 const Story: Meta<typeof DesignSystem> = {
   component: DesignSystem,
-  title: 'DesignSystem',
+  title: 'Ui/DesignSystem',
 };
 export default Story;
 

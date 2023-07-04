@@ -11,7 +11,7 @@ interface UiSelectProps {
   onChange?: any;
 }
 
-const BackdropView = ({
+const SelectView = ({
   menuItems = [],
   labelId = '',
   id = '',
@@ -32,4 +32,4 @@ const BackdropView = ({
   );
 };
 
-export default BackdropView;
+export default SelectView;

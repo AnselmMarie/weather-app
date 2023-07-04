@@ -1,4 +1,5 @@
 import { PropsWithChildren, ReactElement, ReactNode } from 'react';
+
 import { Button } from '@mui/material';
 
 import { UiButtonSize, UiButtonVariant, UiButtonType } from '.';
@@ -25,13 +26,7 @@ const ButtonView = ({
   onClick = () => {},
 }: PropsWithChildren<IUiButton>): ReactElement => {
   return (
-    <Button
-      data-testid={testid}
-      type={type}
-      size={size}
-      variant={variant}
-      onClick={onClick}
-    >
+    <Button data-testid={testid} type={type} size={size} variant={variant} onClick={onClick}>
       {children}
     </Button>
   );

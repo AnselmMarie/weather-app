@@ -20,9 +20,8 @@ const useAddressModalLogic = (): any => {
     resolver: yupResolver(schema, { stripUnknown: true }),
   });
   const { address, isModalOpen, setAddressData } = useContext<any>(AddressContext);
-  const [getWeather, { data, error, isError, isSuccess, isLoading }] = useLazyGetWeatherQuery();
+  const [getWeather, { error, isError, isLoading }] = useLazyGetWeatherQuery();
 
-  // const [payloadObj, setPayloadObj] = useState<IAddress | null>(null);
   const [serverError, setServerError] = useState<any>(null);
 
   const handleClose = (): void => {
@@ -32,7 +31,6 @@ const useAddressModalLogic = (): any => {
 
   const submit = async (payload: IAddress) => {
     const data = structuredClone(payload);
-    // setPayloadObj(data);
 
     try {
       await getWeather(data).unwrap();

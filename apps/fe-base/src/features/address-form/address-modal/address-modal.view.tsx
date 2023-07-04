@@ -10,7 +10,7 @@ import {
   UiModal,
 } from '@weather-app/design-system';
 
-import useAddressModalLogic from './use-address-model.logic';
+import useAddressModalLogic from './use-address-modal.logic';
 
 const AddressModel = (): ReactElement => {
   const {
