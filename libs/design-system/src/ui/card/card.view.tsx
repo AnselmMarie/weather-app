@@ -9,7 +9,7 @@ interface IUiCard {
   onClick?: () => void;
 }
 
-const CardView = ({
+const UiCard = ({
   cardClasses = '',
   raised = false,
   children,
@@ -22,4 +22,4 @@ const CardView = ({
   );
 };
 
-export default CardView;
+export default UiCard;

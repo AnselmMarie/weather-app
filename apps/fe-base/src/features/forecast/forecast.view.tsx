@@ -4,6 +4,7 @@ import { UiCard, UiSelect } from '@weather-app/design-system';
 
 import { IForecastPeriods } from '../../services/weather-address';
 
+import ForecastWarningText from './forecast-wraning-text.view';
 import { menuItemsObj } from './forecast.constant';
 import useWeatherForecastLogic from './use-forecast.logic';
 
@@ -31,7 +32,7 @@ const Forecast = (): ReactElement => {
     <>
       <div className="text-center">
         {!data && !activeDay ? (
-          'To see a 7-day forecast of an area, click on the "Add Address" button, then submit an address..'
+          <ForecastWarningText />
         ) : (
           <div className="text-center">
             <UiSelect

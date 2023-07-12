@@ -5,3 +5,4 @@ export * from './alert';
 export * from './backdrop';
 export * from './modal';
 export * from './select';
+export * from './main-layout';

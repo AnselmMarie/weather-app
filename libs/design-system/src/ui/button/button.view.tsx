@@ -17,7 +17,7 @@ interface IUiButton {
  * The button component uses the material ui button and
  * restricts the props the developer is allowed to use
  */
-const ButtonView = ({
+const UiButton = ({
   testid = '',
   variant = UiButtonVariant.CONTAINED,
   size = UiButtonSize.LARGE,
@@ -32,4 +32,4 @@ const ButtonView = ({
   );
 };
 
-export default ButtonView;
+export default UiButton;

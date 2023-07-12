@@ -10,7 +10,7 @@ interface UiAlertProps {
   children: ReactNode;
 }
 
-const AlertView = ({
+const UiAlert = ({
   severity = UiAlertSeverity.ERROR,
   alertClasses = '',
   children,
@@ -22,4 +22,4 @@ const AlertView = ({
   );
 };
 
-export default AlertView;
+export default UiAlert;

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useFormLogic } from '@weather-app/design-system';
+import { useFormLogic, useMediaQueryLogic } from '@weather-app/design-system';
 import { object, string } from 'yup';
 
 import { IAddress, useLazyGetWeatherQuery } from '../../../services';
@@ -21,6 +21,7 @@ const useAddressModalLogic = (): any => {
   });
   const { address, isModalOpen, setAddressData } = useContext<any>(AddressContext);
   const [getWeather, { error, isError, isLoading }] = useLazyGetWeatherQuery();
+  const desktopAndUpQuery = useMediaQueryLogic();
 
   const [serverError, setServerError] = useState<any>(null);
 
@@ -58,6 +59,7 @@ const useAddressModalLogic = (): any => {
   }, [isError]);
 
   return {
+    desktopAndUpQuery,
     serverError,
     isLoading,
     isModalOpen,

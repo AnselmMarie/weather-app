@@ -6,7 +6,7 @@ interface UiBackdropProps {
   openBackdrop?: boolean;
 }
 
-const BackdropView = ({ openBackdrop = false }: UiBackdropProps): ReactElement => {
+const UiBackdrop = ({ openBackdrop = false }: UiBackdropProps): ReactElement => {
   return (
     <Backdrop
       sx={{
@@ -22,4 +22,4 @@ const BackdropView = ({ openBackdrop = false }: UiBackdropProps): ReactElement =
   );
 };
 
-export default BackdropView;
+export default UiBackdrop;

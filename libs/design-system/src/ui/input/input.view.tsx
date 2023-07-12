@@ -18,7 +18,7 @@ interface IUiInput {
   onControl?: any;
 }
 
-const Input = ({
+const UiInput = ({
   name = '',
   type = UiInputType.TEXT,
   label,
@@ -80,4 +80,4 @@ const Input = ({
   return <InputField />;
 };
 
-export default Input;
+export default UiInput;

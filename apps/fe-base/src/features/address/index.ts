@@ -1,8 +1,8 @@
 import { IAddress } from '../../services/weather-address';
 
-import UiAddressForm from './address-base.view';
+import UiAddress from './address-base.view';
 
-export { UiAddressForm };
+export { UiAddress };
 
 export interface IUiAddress {
   serverError: any;

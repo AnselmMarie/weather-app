@@ -1,16 +1,22 @@
 import { ReactElement } from 'react';
 
-import { UiAddressForm } from '../features/address-form';
+import { UiMainLayout } from '@weather-app/design-system';
+
+import { UiAddress } from '../features/address';
 import { UiDailyForecast } from '../features/daily-forecast';
 import { UiForecast } from '../features/forecast';
 
 const Home = (): ReactElement => {
   return (
-    <>
-      <UiAddressForm />
-      <UiForecast />
-      <UiDailyForecast />
-    </>
+    <UiMainLayout
+      sideNav={<UiAddress />}
+      main={
+        <>
+          <UiForecast />
+          <UiDailyForecast />
+        </>
+      }
+    />
   );
 };
 

@@ -10,7 +10,7 @@ interface UiModalProps {
   children: ReactNode;
 }
 
-const ModalView = ({
+const UiModal = ({
   openModal = false,
   styleBaseContainer = '',
   children,
@@ -22,4 +22,4 @@ const ModalView = ({
   );
 };
 
-export default ModalView;
+export default UiModal;

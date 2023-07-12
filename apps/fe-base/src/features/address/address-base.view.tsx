@@ -1,17 +1,16 @@
 import { ReactElement } from 'react';
 
 import { UiAddressBar } from './address-bar';
-import { UiAddressModel } from './address-modal';
+import { UiAddressForm } from './address-form';
 import { AddressBaseProvider } from './use-address-base.provider';
-import './address-base.css';
 
-const AddressForm = (): ReactElement => {
+const Address = (): ReactElement => {
   return (
     <AddressBaseProvider>
       <UiAddressBar />
-      <UiAddressModel />
+      <UiAddressForm />
     </AddressBaseProvider>
   );
 };
 
-export default AddressForm;
+export default Address;

@@ -9,7 +9,7 @@ interface UiSelectProps {
   onChange?: any;
 }
 
-const SelectView = ({
+const UiSelect = ({
   menuItems = [],
   label = null,
   defaultValue,
@@ -31,4 +31,4 @@ const SelectView = ({
   );
 };
 
-export default SelectView;
+export default UiSelect;
