@@ -4,7 +4,9 @@ import { useMediaQueryLogic } from '@weather-app/design-system';
 
 import { AddressContext } from '../use-address-base.provider';
 
-const useAddressBarLogic = (): any => {
+import { AddressBarLogicReturn } from './address-bar.interface';
+
+const useAddressBarLogic = (): AddressBarLogicReturn => {
   const { address, setAddressData } = useContext<any>(AddressContext);
   const desktopAndUpQuery = useMediaQueryLogic();
 

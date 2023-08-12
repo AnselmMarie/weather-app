@@ -26,15 +26,15 @@ const Story: Meta<typeof UiInput> = {
       description: `The initial value of the input field before it's changed by the user`,
     },
     onControl: {
-      description: `The initial value of the input field before it's changed by the user`,
+      description: 'This allows a lib to control the component',
     },
     onBlur: {
       action: 'blur',
-      description: `The initial value of the input field before it's changed by the user`,
+      description: 'The on blur function will initiate',
     },
     onChange: {
       action: 'change',
-      description: `The initial value of the input field before it's changed by the user`,
+      description: 'The on change function will initiate',
     },
   },
 };

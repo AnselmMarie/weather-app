@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getGeoAddress } from './geocoding-address-controller';
+import { getGeoAddress } from './geocoding-address.controller';
 
 const router = express.Router();
 

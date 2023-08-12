@@ -22,9 +22,9 @@ const AddressModal = (): ReactElement => {
     onHandleClose,
   } = useAddressModalLogic();
 
-  const Form = ({ hideCancel = false }: any): ReactElement => (
+  const Form = ({ hideCancel = false }): ReactElement => (
     <>
-      <div className="text-center prose-base">
+      <div className="text-center">
         <h1 className="font-bold">Weather Address Form</h1>
         <p>By entering an address you will be able to see a 7 day forecast</p>
       </div>

@@ -1,5 +1,6 @@
 export * from './button';
 export * from './card';
+export * from './chip';
 export * from './input';
 export * from './alert';
 export * from './backdrop';

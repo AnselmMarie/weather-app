@@ -7,11 +7,11 @@ import { IForecastPeriods, selectWeatherById } from '../../services/weather-addr
 
 import { activeForecast } from '.';
 
-const useWeatherForecastLogic = () => {
+const useWeatherForecastLogic = (): any => {
   const dispatch = useAppDispatch();
   const [weatherData, setWeatherData] = useState<IForecastPeriods[]>([]);
   const [currentForecastList, setCurrentForecastList] = useState<IForecastPeriods[]>([]);
-  const activeDay = useAppSelector((state) => state.forecast.active);
+  const activeDay = useAppSelector((state) => state.forecast.activeDay);
   const data: any = useAppSelector((state) =>
     selectWeatherById(state, '01e955b0-3dc6-4deb-8d83-a6c5799ba68b')
   );

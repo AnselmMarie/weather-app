@@ -30,7 +30,7 @@ const useAddressModalLogic = (): any => {
     setServerError(null);
   };
 
-  const submit = async (payload: IAddress) => {
+  const submit = async (payload: IAddress): Promise<void> => {
     const data = structuredClone(payload);
 
     try {

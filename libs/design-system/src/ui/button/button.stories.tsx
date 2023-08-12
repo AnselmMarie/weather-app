@@ -22,12 +22,12 @@ const Story: Meta<typeof UiButton> = {
       control: { type: 'select' },
     },
     type: {
-      description: `The nested content of the card component`,
+      description: 'The nested content of the card component',
       options: UiButtonType,
       control: { type: 'select' },
     },
     children: {
-      description: `The nested content of the card component`,
+      description: 'The nested content of the card component',
     },
     onClick: {
       description: 'After a click event this function will be called',

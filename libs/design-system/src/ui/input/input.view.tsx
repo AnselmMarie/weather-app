@@ -5,7 +5,7 @@ import { Controller } from 'react-hook-form';
 
 import { UiInputType } from '.';
 
-interface IUiInput {
+interface UiInputProps {
   type?: string;
   name?: string;
   min?: number;
@@ -29,7 +29,7 @@ const UiInput = ({
   onBlur = null,
   onControl = null,
   onChange = null,
-}: IUiInput): ReactElement => {
+}: UiInputProps): ReactElement => {
   const InputField = ({
     onControlChange = null,
     onControlBlur = null,

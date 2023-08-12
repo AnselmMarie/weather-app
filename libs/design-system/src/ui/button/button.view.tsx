@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 
 import { UiButtonSize, UiButtonVariant, UiButtonType } from '.';
 
-interface IUiButton {
+interface UiButtonProps {
   testid?: string;
   variant?: UiButtonVariant;
   size?: UiButtonSize;
@@ -24,7 +24,7 @@ const UiButton = ({
   type = UiButtonType.BUTTON,
   children,
   onClick = () => {},
-}: PropsWithChildren<IUiButton>): ReactElement => {
+}: PropsWithChildren<UiButtonProps>): ReactElement => {
   return (
     <Button data-testid={testid} type={type} size={size} variant={variant} onClick={onClick}>
       {children}

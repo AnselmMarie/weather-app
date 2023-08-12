@@ -2,7 +2,7 @@ import { PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import { Card } from '@mui/material';
 
-interface IUiCard {
+interface UiCardProps {
   cardClasses?: string;
   raised?: boolean;
   children: ReactNode;
@@ -14,7 +14,7 @@ const UiCard = ({
   raised = false,
   children,
   onClick = () => {},
-}: PropsWithChildren<IUiCard>): ReactElement => {
+}: PropsWithChildren<UiCardProps>): ReactElement => {
   return (
     <Card raised={raised} className={cardClasses} onClick={onClick}>
       {children}

@@ -15,7 +15,7 @@ const Story: Meta<typeof UiCard> = {
       description: `Change the depth of the card's shadow`,
     },
     children: {
-      description: `The nested content of the card component`,
+      description: 'The nested content of the card component',
     },
     onClick: {
       description: 'After a click event this function will be called',

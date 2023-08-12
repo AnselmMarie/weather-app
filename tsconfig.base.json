@@ -13,8 +13,10 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
+      "@/*": ["apps/fe-base/src/*"],
+      "@be/*": ["apps/be-base/src/*"],
       "@weather-app/design-system": ["libs/design-system/src/index.ts"]
     }
   },

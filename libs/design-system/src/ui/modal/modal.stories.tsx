@@ -12,7 +12,7 @@ const Story: Meta<typeof UiModal> = {
       description: 'Prop that will add string classes to the card container',
     },
     children: {
-      description: `The nested content of the card component`,
+      description: 'The nested content of the card component',
     },
   },
 };

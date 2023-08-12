@@ -1,13 +1,18 @@
-import { ReactElement, createContext, useReducer } from 'react';
+import { PropsWithChildren, ReactElement, createContext, useReducer } from 'react';
+
+import { AddressBaseProps } from './address.interface';
 
 const AddressContext = createContext({});
 
-const AddressBaseProvider = ({ children }: any): ReactElement => {
+const AddressBaseProvider = ({ children }: PropsWithChildren): ReactElement => {
   const [addressData, setAddressData] = useReducer(
-    (current: any, update: any) => ({ ...current, ...update }),
+    (current: Partial<AddressBaseProps>, update: Partial<AddressBaseProps>) => ({
+      ...current,
+      ...update,
+    }),
     {
       isModalOpen: false,
-      address: {},
+      address: null,
     }
   );
 

@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getWeatherPoint } from './weather-points-controller';
+import { getWeatherPoint } from './weather-points.controller';
 
 const router = express.Router();
 

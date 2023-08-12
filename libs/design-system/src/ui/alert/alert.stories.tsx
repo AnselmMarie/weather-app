@@ -17,7 +17,7 @@ const Story: Meta<typeof UiAlert> = {
       control: { type: 'select' },
     },
     children: {
-      description: `The nested content of the card component`,
+      description: 'The nested content of the card component',
     },
   },
 };

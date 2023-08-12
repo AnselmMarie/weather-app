@@ -9,7 +9,7 @@ const path = require('path');
 const fs = require('fs');
 const originalResolveFilename = Module._resolveFilename;
 const distPath = __dirname;
-const manifest = [{"module":"@weather-app/design-system","exactMatch":"libs/design-system/src/index.js","pattern":"libs/design-system/src/index.ts"}];
+const manifest = [{"module":"@be/*","pattern":"apps/be-base/src/*"},{"module":"@/*","pattern":"apps/fe-base/src/*"},{"module":"@weather-app/design-system","exactMatch":"libs/design-system/src/index.js","pattern":"libs/design-system/src/index.ts"}];
 
 Module._resolveFilename = function(request, parent) {
   let found;

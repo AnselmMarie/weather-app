@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getForecast } from './forecast-controller';
+import { getForecast } from './forecast.controller';
 
 const router = express.Router();
 
