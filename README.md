@@ -17,12 +17,12 @@ The primary objective of this application is to showcase my skills as a dynamic 
 
 ### Maintainability/Reusability
 
-- Design System (Storybook/Vite/Material Ui)
+- Design System (Storybook/Vite/Material UI)
 
 ### Roadmap
 
 - Fix up the remaining typing and ESLint issues.
-- Display a loading Ui when submitting the form.
+- Display a loading UI when submitting the form.
 - Adding the Color, Spacing, and Typography standards in the Design System.
 - Adding Husky to automate testing and running other commands.
 - Using Python for endpoint calls.
